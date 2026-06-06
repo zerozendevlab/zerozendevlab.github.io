@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — link-tracker | zeroZenDevLab</title>
+  <style>
+    body { font-family: sans-serif; max-width: 680px; margin: 40px auto; padding: 0 20px; color: #222; line-height: 1.6; }
+    h1 { font-size: 1.4rem; }
+    h2 { font-size: 1.05rem; margin-top: 2em; }
+    p, li { font-size: 0.95rem; }
+    a { color: #1a73e8; }
+    code { background: #f3f3f3; padding: 0 4px; border-radius: 3px; font-size: 0.88rem; }
+    footer { margin-top: 3em; font-size: 0.8rem; color: #888; }
+  </style>
+</head>
+<body>
+
+  <h1>Privacy Policy — link-tracker</h1>
+  <p><strong>Service:</strong> link-tracker — cross-channel link redirect and click tracker<br />
+     <strong>Live instance:</strong> <a href="https://zerozendevlab.pythonanywhere.com">zerozendevlab.pythonanywhere.com</a><br />
+     <strong>Developer:</strong> zeroZenDevLab<br />
+     <strong>Data Controller:</strong> zeroZenDevLab (Italy)<br />
+     <strong>Last updated:</strong> 2026-06-06</p>
+
+  <h2>Overview</h2>
+  <p>link-tracker is a self-hosted web service that turns a single shared URL (<code>/go/&lt;slug&gt;</code>) into a tracked redirect to a destination of the operator's choice. The service is designed to log enough to count clicks per channel, and nothing more. This policy applies to the live instance at the URL above.</p>
+
+  <h2>Data we do NOT collect</h2>
+  <p>When you click a <code>/go/&lt;slug&gt;</code> link served by this instance, we do <strong>not</strong> collect, store, or transmit any of the following:</p>
+  <ul>
+    <li>Your IP address.</li>
+    <li>Your browser or User-Agent string.</li>
+    <li>Cookies on the public redirect endpoint.</li>
+    <li>Any device fingerprint or hardware identifier.</li>
+    <li>Your geographic location.</li>
+    <li>The <code>Referer</code> header.</li>
+    <li>Any other information that could identify you, directly or indirectly.</li>
+  </ul>
+  <p>This is enforced at the application level: the data is never even read into memory.</p>
+
+  <h2>Data we DO collect</h2>
+  <p>For each click on a <code>/go/&lt;slug&gt;</code> URL, the service stores a single record containing:</p>
+  <ul>
+    <li>A UTC timestamp of the click.</li>
+    <li>The slug that was clicked (e.g. <code>yt-encodeqr</code>).</li>
+    <li>The internal source and target node identifiers associated with the slug.</li>
+  </ul>
+  <p>None of these fields qualify as personal data under GDPR Article 4(1), because they cannot be associated with an identifiable natural person.</p>
+
+  <h2>Cookies</h2>
+  <p>The public <code>/go/&lt;slug&gt;</code> endpoint sets <strong>no cookies</strong>.</p>
+  <p>The administration area (<code>/admin/*</code>) sets one strictly necessary session cookie when an authorized administrator logs in. This cookie is used only to maintain the authenticated session and is marked <code>Secure</code>, <code>HttpOnly</code>, and <code>SameSite=Lax</code>. Under Article 5(3) of the ePrivacy Directive, strictly necessary cookies do not require user consent.</p>
+
+  <h2>Hosting and data location</h2>
+  <p>The service is hosted on PythonAnywhere, a UK-based provider. Following the UK GDPR adequacy decision (Implementing Decision (EU) 2021/1772), personal data transfers between the EU and the UK take place without additional safeguards. Click records are stored in a SQLite database file on the hosting server. No data is transferred outside the UK or to any third party.</p>
+
+  <h2>Third-party services</h2>
+  <p>The service does not integrate any third-party analytics, advertising, tag manager, CDN, or external SDK at runtime. No data is shared with any third party.</p>
+
+  <h2>Your rights</h2>
+  <p>Under the EU General Data Protection Regulation (GDPR) you have the right to access, rectify, delete, restrict the processing of, port, and object to the processing of any personal data the service holds about you. Since the public click traffic produces no personal data by design, there is nothing on our end to access, rectify, delete, or port. For administrative accounts (operators), you may request access or deletion of your authentication record by contacting us at the address below.</p>
+
+  <h2>Retention</h2>
+  <p>Click records (timestamp + slug + internal ids) are retained indefinitely for the operator's own usage statistics. Because no personal data is stored, retention does not create a GDPR data subject impact. The operator may delete records at any time from the administration area.</p>
+
+  <h2>Children</h2>
+  <p>The service does not knowingly collect data from any user, including children under 13 (COPPA) or under 16 (GDPR Article 8). Because no personal data is collected from public click traffic, the service is compatible with use by minors.</p>
+
+  <h2>Applicable law</h2>
+  <p>This policy is governed by the European Union General Data Protection Regulation (Regulation (EU) 2016/679), the ePrivacy Directive (Directive 2002/58/EC) as implemented in Italian law (D.Lgs. 196/2003 and subsequent amendments), and applicable Italian law.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>We may update this policy. Material changes will be reflected by updating the "Last updated" date above and publishing the revised version at the same URL. Continued use of the service after a change constitutes acceptance of the updated policy.</p>
+
+  <h2>Contact</h2>
+  <p>For any privacy-related question: <a href="mailto:zeroZenDevLab+privacy@gmail.com">zeroZenDevLab+privacy@gmail.com</a></p>
+
+  <footer>zeroZenDevLab — <a href="https://github.com/zerozendevlab">github.com/zerozendevlab</a></footer>
+
+</body>
+</html>
